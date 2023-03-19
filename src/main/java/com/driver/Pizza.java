@@ -57,21 +57,21 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        bill+="Base Price Of The Pizza: "+(isVeg ? 300 :400)+"\n";
+        bill+="Base Price Of The Pizza:"+(isVeg ? 300 :400)+"\n";
 
         if(cheese) {
-            bill+="Extra Cheese Added: "+80+"\n";
+            bill+="Extra Cheese Added:"+80+"\n";
 
         }
         if(toppings) {
-            bill+="Extra Toppings Added: "+(isVeg ? 70:120)+"\n";
+            bill+="Extra Toppings Added:"+(isVeg ? 70:120)+"\n";
 
         }
         if(bag) {
-            bill+="Paperbag Added: "+20+"\n";
+            bill+="Paperbag Added:"+20+"\n";
 
         }
-        bill+="Total Price: "+price;
+        bill+="Total Price:"+price;
         return this.bill;
     }
 
