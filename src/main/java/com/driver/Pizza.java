@@ -2,19 +2,22 @@ package com.driver;
 
 public class Pizza {
 
+
+
+    private int price;
+
     public void setPrice(int price) {
         this.price = price;
     }
 
-    private int price;
+
+
+    private Boolean isVeg;
 
     public Boolean getVeg() {
         return isVeg;
     }
-
-    private Boolean isVeg;
     private String bill;
-
     private boolean cheese;
     private boolean toppings;
     private boolean bag;
@@ -35,38 +38,38 @@ public class Pizza {
 
     public void addExtraCheese(){
         // your code goes here
-
+        if(!cheese) price+=80;
         this.cheese = true;
 
     }
 
     public void addExtraToppings(){
         // your code goes here
-
+        if(!toppings) price+=(isVeg ? 70:120);
         this.toppings = true;
     }
 
     public void addTakeaway(){
         // your code goes here
-
+        if(!bag) price+=20;
         this.bag = true;
     }
 
     public String getBill(){
         // your code goes here
-        bill+="Base Price Of The Pizza: "+price+"\n";
+        bill+="Base Price Of The Pizza: "+(isVeg ? 300 :400)+"\n";
 
         if(cheese) {
             bill+="Extra Cheese Added: "+80+"\n";
-            price+=80;
+
         }
         if(toppings) {
             bill+="Extra Toppings Added: "+(isVeg ? 70:120)+"\n";
-            price+=(isVeg ? 70:120);
+
         }
         if(bag) {
             bill+="Paperbag Added: "+20+"\n";
-            price+=20;
+
         }
         bill+="Total Price: "+price;
         return this.bill;
